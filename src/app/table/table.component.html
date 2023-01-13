@@ -1,5 +1,5 @@
 <div class="my-12 flex justify-center w-full">
-  <div class="py-8 flex flex-col w-full lg:w-1/2">
+  <div class="py-8 flex flex-col w-full lg:w-2/3">
     <div>
       <h2 class="text-2xl font-semibold leading-tight mt-12">Listado de usuarios</h2>
     </div>
@@ -27,34 +27,34 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
+          <tr *ngFor="let item of usersList; let i = index;">
             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/5">
               <div class="flex items-center">
                 <div class="flex-shrink-0 w-10 h-10 hidden sm:table-cell">
                   <img class="w-full h-full rounded-full"
-                       src="https://images.unsplash.com/photo-1601046668428-94ea13437736?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80"
+                       [src]="item.picture.thumbnail"
                        alt="" />
                 </div>
                 <div class="ml-3">
                   <p class="text-gray-900 whitespace-no-wrap">
-                    Team 1
+                    {{item.name.title}} {{item.name.first}} {{item.name.last}}
                   </p>
                 </div>
               </div>
             </td>
             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
               <p class="text-gray-900 whitespace-no-wrap text-center">
-                email
+                {{item.email}}
               </p>
             </td>
             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
               <p class="text-gray-900 whitespace-no-wrap text-center">
-                tel
+                {{item.phone}}
               </p>
             </td>
             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
               <p class="text-gray-900 whitespace-no-wrap text-center">
-                nat
+                {{item.nat}}
               </p>
             </td>
           </tr>
